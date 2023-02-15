@@ -976,7 +976,7 @@ var Jbig2Stream = (function Jbig2StreamClosure() {
     var jbig2Image = new Jbig2Image();
 
     var chunks = [], decodeParams = this.dict.get('DecodeParms');
-    if (decodeParams && decodeParams.has('JBIG2Globals')) {
+    if (decodeParams && decodeParams.has && decodeParams.has('JBIG2Globals')) {
       var globalsStream = decodeParams.get('JBIG2Globals');
       var globals = globalsStream.getBytes();
       chunks.push({data: globals, start: 0, end: globals.length});
