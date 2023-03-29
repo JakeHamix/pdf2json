@@ -21,6 +21,10 @@
 //MQZ. Oct.10.2012. Moved globalScope definition to lib/pdf.js
 //var globalScope = (typeof window === 'undefined') ? this : window;
 
+const EventEmitter = require('events');
+var nodeUtil = require("util");
+nodeUtil.emitter = new EventEmitter();
+
 var isWorker = (typeof window == 'undefined');
 
 var ERRORS = 0, WARNINGS = 1, INFOS = 5;
@@ -1235,7 +1239,6 @@ function loadJpegStream(id, imageUrl, objs) {
 }
 
 //MQZ Oct.18.2013 expose util methods
-var nodeUtil = require("util");
 nodeUtil.p2jlog = log;
 nodeUtil.p2jinfo = info;
 nodeUtil.p2jwarn = warn;
