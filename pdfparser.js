@@ -36,7 +36,7 @@ let PDFParser = (function () {
 
 	let _onPDFJSParserDataError = function(data) {
 		this.data = null;
-		this.emit("pdfParser_dataError", {"parserError": data});
+		this.emit("pdfParser_dataError", {"parserError": data, message: data});
 	};
 
 	let _startParsingPDF = function(buffer) {
