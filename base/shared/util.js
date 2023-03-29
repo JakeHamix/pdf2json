@@ -196,6 +196,7 @@ function error(msg) {
   }
   //log(backtrace());
   //PDFJS.LogManager.notify('error', msg);
+  nodeUtil.emitter.emit('error', msg);
   throw new Error(msg);
 }
 
